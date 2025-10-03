@@ -35,7 +35,7 @@ object camion {
         return not self.elPesoEstaExcedido() && not cosasCargadas.any({c => c.nivelDePeligrosidad() > unNivel})
     }
     method hayAlgoQuePeseEntre(valorMin, valorMax){
-        return cosasCargadas.any({c => c.peso() > valorMin && c.peso() < valorMax })
+        return cosasCargadas.any({c => c.peso().between(valorMin, valorMax)})
     }
     method cosaMasPesada(){
         return cosasCargadas.max({c => c.peso()})
