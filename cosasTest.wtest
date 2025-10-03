@@ -2,8 +2,26 @@ import cosas.*
 
 describe "group of test for cosas" {
 
-  test "first test" {
-    assert.that(true)
+  test "peso del paquete de ladrillos" {
+    paquete.cambiarCantidad(3)
+    assert.that(paquete.peso() == 6)
   }
+}
+
+test "peso de la bateria" {
+  bateria.sacarMisiles()
+  assert.that(bateria.peso() == 200)
+}
+
+test "nivel de peligrosidad del contenedor"{
+  contenedor.cargarCosa(arena)
+  contenedor.cargarCosa(residuos)
+  assert.that(contenedor.nivelDePeligrosidad() == 200)
+}
+
+test "peso del embalaje" {
+  residuos.cambiarPeso(30)
+  embalaje.envolver(residuos)
+  assert.that(embalaje.peso() == 30)
 
 }
